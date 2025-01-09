@@ -193,6 +193,25 @@
         transform: translateY(-5px);
       }
     }
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
   </style>
 </head>
@@ -211,6 +230,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#product">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#offer-zone">Offer Zone</a></li>
           <li class="nav-item">
@@ -257,6 +277,27 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="product" class="container my-5">
+    <h2 class="text-center mb-4">Our Products</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-card">
+          <img src="Img1.png" alt="Polaroid Photos">
+          <h5>Polaroid Photos</h5>
+          <p>Get a set of 9 beautiful Polaroid photos, customizable with your favorite memories.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="product-card">
+          <img src="Img2.png" alt="Ring Album">
+          <h5>Customizable Ring Album</h5>
+          <p>Create your own personalized ring album. A perfect way to preserve your memories!</p>
+        </div>
+      </div>
     </div>
   </section>
 
