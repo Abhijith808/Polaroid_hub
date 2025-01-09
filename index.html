@@ -212,6 +212,40 @@
       border-radius: 10px;
     }
 
+
+#about-text {
+  font-size: 1.1rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+#about-text #dots {
+  color: #888;
+  font-weight: bold;
+}
+
+#about-text #more {
+  color: #333;
+}
+
+#read-more-btn {
+  background-color: #ff9a9e; /* A soft pink to match the theme */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+#read-more-btn:hover {
+  background-color: #fbc2eb; /* Change color on hover */
+}
+    
+    
+
   </style>
 </head>
 <body class="light-mode">
@@ -248,6 +282,25 @@
     </div>
   </header>
 
+<section id="about" class="container my-5">
+  <h2 class="text-center mb-4">About Us</h2>
+  <p id="about-text" class="text-center">
+    Polaroid_hub is a platform where you can relive your favorite memories by printing them in a classic Polaroid style.
+    From beaches to cityscapes, we make your moments timeless. Whether it’s family gatherings, special events, or
+    unforgettable vacations, our Polaroids preserve the essence of your happiest moments. 
+    <span id="dots">...</span>
+    <span id="more" style="display: none;">
+      Our mission is to bring back the nostalgia of the Polaroid camera with a modern touch. We offer a variety of 
+      products, from custom Polaroid prints to personalized ring albums. With Polaroid_hub, your memories are just a click away 
+      from becoming tangible. 
+      We take pride in providing high-quality prints and customizations that match your unique style. 
+      Whether you want to decorate your home, make a thoughtful gift, or simply save memories for the future, we've got you covered.
+    </span>
+  </p>
+  <button id="read-more-btn" class="btn btn-primary mx-auto d-block">Read More</button>
+</section>
+
+  
   <!-- Carousel Section -->
   <section class="carousel-section my-5">
     <div id="offerCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -389,6 +442,29 @@
       document.body.classList.toggle('dark-mode');
       document.body.classList.toggle('light-mode');
     }
+
+
+document.getElementById("read-more-btn").addEventListener("click", function() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("read-more-btn");
+
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    dots.style.display = "none";
+    btnText.innerHTML = "Read Less";
+  } else {
+    moreText.style.display = "none";
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read More";
+  }
+});
+
+    
   </script>
+
+
+  
+  
 </body>
 </html>
