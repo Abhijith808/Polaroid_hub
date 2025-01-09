@@ -138,6 +138,8 @@
       border-radius: 20px;
       padding: 10px 20px;
       transition: background-color 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
     }
 
     #themeToggle:hover {
@@ -151,6 +153,44 @@
         width: 100%;
         max-height: 250px;
         object-fit: cover;
+      }
+    }
+
+    /* Feedback Button Styles */
+    .feedback-btn {
+      background: linear-gradient(45deg, #ff6ec7, #ff9a9e);
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+      animation: bounce 1.5s infinite;
+      margin-bottom: 30px;
+    }
+
+    .feedback-btn:hover {
+      background: linear-gradient(45deg, #ff9a9e, #ff6ec7);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+      transform: scale(1.1);
+    }
+
+    .feedback-btn:focus {
+      outline: none;
+      transform: scale(1.05);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
       }
     }
   </style>
@@ -172,16 +212,6 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#offer-zone">Offer Zone</a></li>
-          <li class="nav-item">
-            <button class="btn btn-outline-light" id="themeToggle">
-              <i class="fas fa-sun"></i>
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-light" onclick="window.location.href='mailto:photopovic@gmail.com'">
-              Feedback
-            </button>
-          </li>
         </ul>
       </div>
     </div>
@@ -230,61 +260,8 @@
   <section id="gallery" class="container my-5">
     <h2 class="text-center mb-4">Gallery</h2>
     <div class="row">
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img4.png" alt="Happy Family">
-          <p>Happy Family</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img5.png" alt="Wedding Anniversary">
-          <p>Wedding Anniversary Memories</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img1.png" alt="Ring Album">
-          <p>Ring Album</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img2.png" alt="Polaroid Pics">
-          <p>Polaroid Pics</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img6.png" alt="Baby Shower">
-          <p>Baby Shower Memories</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="polaroid-card">
-          <img src="Img7.png" alt="Graduation">
-          <p>Graduation Day</p>
-        </div>
-      </div>
+      <!-- Gallery Items Here -->
     </div>
-  </section>
-
-  <!-- Offer Zone Section -->
-  <section id="offer-zone" class="container my-5">
-    <h2 class="text-center mb-4">Offer Zone</h2>
-    <div class="text-center">
-      <img src="Offer.png" alt="Offer Zone" class="img-fluid mb-4">
-    </div>
-    <p class="text-center">Exciting offers await! Check out our special deals on Polaroid prints and more.</p>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="container my-5">
-    <h2 class="text-center mb-4">About Us</h2>
-    <p class="text-center">
-      Polaroid_hub is a platform where you can relive your favorite memories by printing them in a classic Polaroid style.
-      From beaches to cityscapes, we make your moments timeless.
-    </p>
   </section>
 
   <!-- Contact Section -->
@@ -295,32 +272,20 @@
     <p class="text-center">Instagram: <a href="https://www.instagram.com/polaroids_hub?igshid=ZThyd2xvdDVsMXJ0" target="_blank">@polaroids_hub</a></p>
   </section>
 
+  <!-- Feedback Button -->
+  <section class="text-center mb-5">
+    <button class="feedback-btn" onclick="window.location.href='mailto:photopovic@gmail.com'">
+      Send Feedback
+    </button>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Polaroid_hub | Follow us on 
-      <a href="https://www.instagram.com/polaroids_hub?igshid=ZThyd2xvdDVsMXJ0" target="_blank">Instagram</a>
-    </p>
+    <p>&copy; 2025 Polaroid_hub | Follow us on <a href="https://www.instagram.com/polaroids_hub?igshid=ZThyd2xvdDVsMXJ0" target="_blank">Instagram</a></p>
   </footer>
 
   <!-- JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-  <script>
-    const themeToggleButton = document.getElementById('themeToggle');
-    themeToggleButton.addEventListener('click', function() {
-      const body = document.body;
-      const isDarkMode = body.classList.contains('dark-mode');
-
-      if (isDarkMode) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-      } else {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-        themeToggleButton.innerHTML = '<i class="fas fa-moon"></i>';
-      }
-    });
-  </script>
 </body>
 </html>
